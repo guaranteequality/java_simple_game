@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body{
+                margin: 0;
+            }
+            #canvas{
+                border: 1px solid black;
+                margin-left: calc(50% - 480px);
+            }
+
+            #coin {
+                -webkit-animation: rotation 2s infinite linear;
+            }
+
+            @-webkit-keyframes rotation {
+                    from {
+                            -webkit-transform: rotateX(0deg);
+                    }
+                    to {
+                            -webkit-transform: rotateX(359deg);
+                    }
+            }
+            /* img{
+                display: none;
+            } */
+        </style>
+
+    </head>
+    <body>
+        <div style="display: none">
+            <img id="floor" src="assets/img/floor.jpg"/>
+            <img id="wall" src="assets/img/wall.jpg"/>
+            <img id="coin" src="assets/img/coin.png"/>
+            <img id="obstacle" src="assets/img/obstacle.jpg"/>
+
+            <img id="player-up" src="assets/img/player-up.jpg"/>
+            <img id="player-right" src="assets/img/player-right.jpg"/>
+            <img id="player-down" src="assets/img/player-down.jpg"/>
+            <img id="player-left" src="assets/img/player-left.jpg"/>
+        </div>
+        
+        <canvas id="canvas" height="960px" width="960px"></canvas>
+        
+        <script>
+            var canvas=document.getElementById('canvas');
+            var context=canvas.getContext('2d');
+            var unitPixel = 40;
+        </script>
+        
+        <script src="assets/js/arena-data.js"></script>
+        <script src="assets/js/player.js"></script>
+        <script src ="assets/js/obstacle.js"></script>
+        <script src="assets/js/manage-arena.js"></script>
+        
+        <script>
+            var height = window.innerHeight - 10;
+            document.body.style.zoom = (height/960);
+        </script>
+    </body>
+</html>
